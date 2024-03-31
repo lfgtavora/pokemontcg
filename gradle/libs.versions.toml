@@ -4,6 +4,8 @@ androidDesugarJdkLibs = "2.0.4"
 androidTools = "31.3.0"
 androidxComposeCompiler = "1.5.8"
 androidxComposeRuntimeTracing = "1.0.0-beta01"
+androidxHiltNavigationCompose = "1.2.0"
+androidxLifecycle = "2.7.0"
 hilt = "2.51"
 kotlin = "1.9.22"
 coreKtx = "1.12.0"
@@ -51,6 +53,10 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
+androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycle" }
+androidx-lifecycle-runtimeTesting = { group = "androidx.lifecycle", name = "lifecycle-runtime-testing", version.ref = "androidxLifecycle" }
+androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidxLifecycle" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 
@@ -76,8 +82,10 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 #project plugins
-nowinandroid-android-application = { id = "nowinandroid.android.application", version = "unspecified" }
+pokemontcg-android-application = { id = "pokemontcg.android.application", version = "unspecified" }
+pokemontcg-android-library = { id = "pokemontcg.android.library", version = "unspecified" }
 pokemontcg-android-application-compose = { id = "pokemontcg.android.application.compose", version = "unspecified" }
 pokemontcg-android-library-compose = { id = "pokemontcg.android.library.compose", version = "unspecified" }
 pokemontcg-android-hilt = { id = "pokemontcg.android.hilt", version = "unspecified" }
+pokemontcg-android-feature = { id = "pokemontcg.android.feature", version = "unspecified" }
 
