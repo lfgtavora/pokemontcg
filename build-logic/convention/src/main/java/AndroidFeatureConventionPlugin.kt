@@ -14,30 +14,33 @@
  *   limitations under the License.
  */
 
-import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.gradle.LibraryExtension
 import com.lfgtavora.pokemontcg.configureGradleManagedDevices
-import com.lfgtavora.pokemontcg.configureKotlinAndroid
+import com.lfgtavora.pokemontcg.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
 
-class AndroidApplicationConventionPlugin : Plugin<Project> {
+class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            with(pluginManager) {
-                apply("com.android.application")
-                apply("org.jetbrains.kotlin.android")
+            pluginManager.apply {
+                apply("pokemontcg.android.library")
+                apply("pokemontcg.android.hilt")
             }
-
-            extensions.configure<ApplicationExtension> {
-                configureKotlinAndroid(this)
-                defaultConfig.targetSdk = 34
-                @Suppress("UnstableApiUsage")
+            extensions.configure<LibraryExtension> {
                 testOptions.animationsDisabled = true
                 configureGradleManagedDevices(this)
             }
 
+            dependencies {
+                add("implementation", project(":core:designsystem"))
+                add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
+                add("implementation", libs.findLibrary("androidx.lifecycle.runtimeCompose").get())
+                add("implementation", libs.findLibrary("androidx.lifecycle.viewModelCompose").get())
+                add("androidTestImplementation", libs.findLibrary("androidx.lifecycle.runtimeTesting").get())
+            }
         }
     }
-
 }
