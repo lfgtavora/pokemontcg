@@ -48,6 +48,10 @@ gradlePlugin {
             id = "pokemontcg.android.library.compose"
             implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
+        register("androidFeature") {
+            id = "pokemontcg.android.feature"
+            implementationClass = "AndroidFeatureConventionPlugin"
+        }
         register("androidHilt") {
             id = "pokemontcg.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"
