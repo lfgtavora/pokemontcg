@@ -37,7 +37,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun PokemontcgTheme(
+fun PokemonTcgTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
      dynamicColor: Boolean = true,
     content: @Composable () -> Unit
